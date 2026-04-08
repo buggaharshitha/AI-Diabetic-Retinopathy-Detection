@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>DR AI System</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/predict">Predict</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="card">
+
+    <h1>Upload Retinal Image</h1>
+
+    <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showLoader()">
+        <input type="file" name="file" id="fileInput" required onchange="previewImage()">
+        <br>
+        <img id="preview" style="display:none; width:200px; margin-top:10px; border-radius:10px;">
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- LOADING SPINNER -->
+    <div id="loader" class="loader" style="display:none;"></div>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if prediction %}
+    <div class="result">
+        <h2>Prediction: {{ prediction }}</h2>
+        <p>Confidence: {{ confidence }}</p>
+
+        <!-- PROGRESS BAR -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <img src="{{ url_for('static', filename='uploads/' ~ filename) }}">
+    </div>
+    {% endif %}
+
+</div>
+
+<script>
+function previewImage() {
+    const file = document.getElementById("fileInput").files[0];
+    const preview = document.getElementById("preview");
+
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    }
+}
+
+function showLoader() {
+    document.getElementById("loader").style.display = "block";
+}
+
+/* Animate progress bar after result loads */
+window.onload = function() {
+    let bar = document.getElementById("progressBar");
+    if(bar){
+        bar.style.width = "{{ confidence|default('0') }}";
+    }
+}
+</script>
+
+</body>
+</html>
