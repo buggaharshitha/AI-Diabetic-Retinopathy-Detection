@@ -1,0 +1,37 @@
+Diabetic Retinopathy (DR) is a serious eye disease caused by diabetes that can lead to vision loss or blindness if not detected early. 
+It occurs when prolonged high blood sugar damages the tiny blood vessels in the retina, the light-sensitive tissue at the back of the eye. 
+While regular eye checkups are essential, manual diagnosis is time‑consuming and requires trained specialists. 
+Artificial Intelligence offers a powerful solution by automatically analyzing retinal images. Using machine learning and deep learning models,
+AI systems can detect early signs of DR quickly and accurately, assisting doctors in diagnosis, reducing workload, and improving patient care. 
+Overall, AI plays a crucial role in preventing vision loss by enabling faster, reliable, and affordable screening of diabetic retinopathy.
+
+Existing System:
+In the existing system, Diabetic Retinopathy is diagnosed manually by ophthalmologists through eye examinations and analysis of retinal fundus images. 
+This process relies heavily on the doctor’s expertise and visual inspection, which can be time‑consuming and costly. 
+In rural or resource‑limited areas, access to specialists is scarce, making large‑scale screening difficult and delaying early detection. 
+Moreover, human fatigue and errors may reduce diagnostic accuracy, increasing the risk of missed or late identification of the disease.
+
+Disadvantages of existing system:
+Detection depends mainly on manual examination by eye specialists
+Screening process is slow and time-consuming
+Limited availability of ophthalmologists, especially in rural areas
+Prone to human error due to fatigue or lack of experience
+High cost of regular eye checkups
+Difficult to perform large-scale screening
+Early stages of the disease may go unnoticed, leading to delayed treatment.
+
+Proposed System:
+This introduces Artificial Intelligence (AI) and Machine Learning techniques to automatically detect Diabetic Retinopathy from retinal images. 
+By training convolutional neural networks on large datasets, the system can quickly and accurately classify disease severity. 
+This reduces the workload of ophthalmologists, saves time, and enables early diagnosis. 
+The solution can be deployed in hospitals, clinics, and remote healthcare centers, making eye screening more accessible, affordable, and efficient. 
+
+Advantages of proposed system:
+Provides fast and accurate detection of diabetic retinopathy
+Enables early diagnosis, preventing vision loss or blindness
+Reduces doctors’ workload by assisting in large-scale screening
+Saves time and is cost-effective compared to manual examination
+Useful in rural and remote areas with limited access to specialists
+Produces consistent results and reduces human error
+Can be integrated with hospitals, clinics, and telemedicine systems
+
